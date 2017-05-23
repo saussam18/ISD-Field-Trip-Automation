@@ -1,0 +1,3 @@
+pwd  = print working directory
+ls = list contents in current working directory
+cd = change directory
