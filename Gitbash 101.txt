@@ -5,7 +5,7 @@ cd 'name of directory' = change directory
 cd .. = goes back up a directory
 cd ~ = goes to home directory
 git = lists out more git
-git status = will tell you what changes you made since your last push/pull
+git status = will tell you what changes you made to your file since your last push/pull
 
 Setting up an SSH Key to connect your computer to Github:
   1. type 'cd ~'
@@ -14,7 +14,23 @@ Setting up an SSH Key to connect your computer to Github:
   3. This creates a new ssh key, using the provided email as a label.
   4. When you're prompted to "Enter a file in which to save the key," press Enter.
     This accepts the default file location.
-  5. When prompted to input password put password if you want. (Personally I don't recommend it gets super annoying)
+  5. When prompted to input password put password if you want. (Personally I don't recommend it gets super annoying super fast)
+  6. Your ssh key in now generated :)
+  7. type cd '~/.ssh'
+  8. If you hit 'ls' you should see your key (it is the .pub file)
+  9. type 'cat id_rsa.pub'(this will print out your key)
+  10. Copy your ssh key using right click copy ('ctrl + c' won't work).
+  11. Go to github.com and in your settings there will be a setting for 'SSH and GPG keys', click on that.
+  12. Click new SSH key and give it a name and paste your ssh key where it says key. 
+
+Connecting your computer to your repository:
+  1. Open file explorer and in your home directory create a new folder called 'github'
+  2. In git bash type 'cd github'
+  3. go to your repository in github and click on where it says 'clone or download
+  4. Make sure it says 'clone with ssh' and copy that link 
+  5. In git bash type 'git clone ' and right click paste your link (again ctrl+v won't work). Then hit enter.
+  6. hit 'ls' and you should be able to see your repository listed
+  7. change directory to your new repository, and now you are able to push and pull to github.
 
 Syncing your computer to Github repo:
   1. be in the project directory in gitbash
