@@ -21,13 +21,13 @@ Setting up an SSH Key to connect your computer to Github:
   9. type 'cat id_rsa.pub'(this will print out your key)
   10. Copy your ssh key using right click copy ('ctrl + c' won't work).
   11. Go to github.com and in your settings there will be a setting for 'SSH and GPG keys', click on that.
-  12. Click new SSH key and give it a name and paste your ssh key where it says key. 
+  12. Click new SSH key and give it a name and paste your ssh key where it says key.
 
 Connecting your computer to your repository:
   1. Open file explorer and in your home directory create a new folder called 'github'
   2. In git bash type 'cd github'
   3. go to your repository in github and click on where it says 'clone or download
-  4. Make sure it says 'clone with ssh' and copy that link 
+  4. Make sure it says 'clone with ssh' and copy that link
   5. In git bash type 'git clone ' and right click paste your link (again ctrl+v won't work). Then hit enter.
   6. hit 'ls' and you should be able to see your repository listed
   7. change directory to your new repository, and now you are able to push and pull to github.
@@ -38,7 +38,8 @@ Syncing your computer to Github repo:
 
 Saving your changes to Github:
   1. be in the project directory in gitbash
-  2. git add -A = this will add all changes you made to an index (package)
-  3. git commit -m "your message" = Will send/commit your index to github. If you accidently forgot '-m'
+  2. Do a git pull first!!!
+  3. git add -A = this will add all changes you made to an index (package)
+  4. git commit -m "your message" = Will send/commit your index to github. If you accidently forgot '-m'
      then STILL write your commit message however when you are done press 'esc' then type ':wq' then hit enter
-  4. git push = finalizes and pushes everything to the cloud
+  5. git push = finalizes and pushes everything to the cloud
