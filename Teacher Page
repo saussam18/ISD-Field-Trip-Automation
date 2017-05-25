@@ -1,12 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <title>Teacher Page</title>
+        <title>Student Page</title>
+        <style>
+            .container {
+                margin: auto;
+                width: 50%;
+                background-color: white;
+                border: 3px solid green;
+                padding: 10px;
+                font-family: "Quattrocento Sans";
+            }
+            img {
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+                display: block;
+
+            }
+            .name {
+                margin: auto;
+                padding-top: 10px;
+
+            }
+            .password {
+                margin: auto;
+                width: 58%;
+                padding: 10px;
+            }
+            button {
+                font-family: "Quattrocento Sans";
+                width: 20%;
+                margin-left: 40%;
+                margin-right: 40%;
+                padding: 10px;
+                font-size: 100%;
+                background-color: palegreen;
+                border: 3px solid green;
+            }
+            .login {
+                margin: auto;
+                border: 3px solid green;
+                padding: 10px;
+                background-color: palegreen;
+            }
+            body {
+                background-color: #defdde;
+            }
+            input {
+                border: 3px solid green;
+                margin-left: 35%;
+                margin-right: 35%;
+                width: 30%;
+            }
+            p {
+                padding: 10px;
+                margin: auto;
+                width: 20%;
+            }
+        </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Teacher Page</div>
-        <p><button type="button">Create Form</button></p>
-        <p><button type="button">Edit Existing Form</button></p>
+        <div class="container">
+            <p>Welcome Teacher!</p>
+            <br>
+            <button type="button">Create Form</button>
+            <br>
+            <br>
+            <button type="button">Edit Existing Form</button>
+            <br>
+            <br>
+        </div>
     </body>
 </html>
+
+
