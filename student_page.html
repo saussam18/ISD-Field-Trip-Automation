@@ -35,13 +35,15 @@ and open the template in the editor.
             }
             button {
                 font-family: "Quattrocento Sans";
+                font-size: 100%;
+                background-color: palegreen;
+                border: 3px solid green;
+            }
+            button.mid {
                 width: 20%;
                 margin-left: 40%;
                 margin-right: 40%;
                 padding: 10px;
-                font-size: 100%;
-                background-color: palegreen;
-                border: 3px solid green;
             }
             .login {
                 margin: auto;
@@ -68,6 +70,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <button type="button" name="Profile">Profile</button>
         <div class="container">
             <p>Welcome student!</p>
             <div  class="login">
@@ -76,10 +79,10 @@ and open the template in the editor.
                 <input type="text">
                 </div>
                 <br>
-                <button type="submit" name="Submit">Enter</button>
+                <button class="mid" type="submit" name="Submit">Enter</button>
                 <br>
                 <br>
-                <button type="button" name="Change">Change existing forms</button>
+                <button class="mid" type="button" name="Change">Change existing forms</button>
             </div>
         </div>
     </body>
