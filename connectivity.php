@@ -15,11 +15,15 @@ function SignIn() {
 
         if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
             $_SESSION['userName'] = $row['pass'];
-            echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE..."; //success
+            //echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE..."; //success
+            header("Location: student-page.html");
         }
         else {
             echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY..."; //fail
         }
+    }
+    else {
+      echo "You forgot your username and/or password numb nuts";
     }
 }
 
