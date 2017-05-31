@@ -1,5 +1,7 @@
 <!-- my name jeff -->
 <!-- my name jeff -->
+<?php include ('connectivity.php'); ?>
+
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
@@ -85,7 +87,7 @@
                 <br>
                 <button type="submit" name="Submit">Login</button>
                 <br>
-                <span> <?php echo $error; ?></span>
+                <span style="color:red"> <?php echo $error;//error message will go in here ?></span>
             </div>
             <br>
             <select class="combo">
