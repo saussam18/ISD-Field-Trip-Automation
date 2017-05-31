@@ -85,6 +85,7 @@
                 <br>
                 <button type="submit" name="Submit">Login</button>
                 <br>
+                <span> <?php echo $error; ?></span>
             </div>
             <br>
             <select class="combo">
