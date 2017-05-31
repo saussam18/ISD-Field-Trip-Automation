@@ -8,3 +8,6 @@ INSERT INTO
 UserName (userName, pass)
 VALUES
 ("saussam18","0864196");
+
+
+ALTER TABLE `username` ADD `type` VARCHAR(40) NOT NULL DEFAULT 'Student/Guardian Access' AFTER `pass`;
