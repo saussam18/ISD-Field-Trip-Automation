@@ -9,8 +9,12 @@ $find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" 
 
 function SignIn() {
     session_start();//session start, only done if submit button is pressed
+
     if(!empty($_POST['Username']))  { //checks if username and password has text and if it exists
         $query = mysql_query("SELECT * FROM UserName where userName = '$_POST[Username]' AND pass = '$_POST[Password]' AND  type = '$_POST'[Student/Guardian Access]") or die(mysql_error()); //checks if user and password is avaible
+
+    if(!empty($_POST['Username']) && !empty($_POST['Password']))  { //checks if username and password has text and if it exists
+        $query = mysql_query("SELECT * FROM UserName where userName = '$_POST[Username]' AND pass = '$_POST[Password]'") or die(mysql_error()); //checks if user and password is avaible
         $row = mysql_fetch_array($query); // fetches data
 if $!empty($row['type']){
   if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
