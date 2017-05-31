@@ -27,8 +27,12 @@
               if (!empty($row['type'])){
                   if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
                       $_SESSION['userName'] = $row['pass'];
-                      //echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE..."; //success
-                      header("Location: student-page.html");
+                      if ($row['type'] = 'Student/Guardian Access'){
+                          header("Location: student-page.html");
+                        }else if ($row['type'] = 'Teacher Access'){
+                        header("Location: teacher-page.html");
+                        }
+
                   }
                   else {
                       $error = "You entered the wrong username and/or password."; //fail
