@@ -35,6 +35,7 @@ and open the template in the editor.
                 padding: 10px;
             }
             button {
+		
                 font-family: "Quattrocento Sans";
                 font-size: 100%;
                 background-color: palegreen;
@@ -56,7 +57,7 @@ and open the template in the editor.
                 background-color: #defdde;
 
             }
-            input {
+            input.notbutton {
                 border: 3px solid green;
                 margin-left: 35%;
                 margin-right: 35%;
@@ -68,20 +69,33 @@ and open the template in the editor.
                 margin: auto;
 
             }
+			.logout {
+				font-family: "Quattrocento Sans";
+                font-size: 100%;
+                background-color: palegreen;
+                border: 3px solid green;
+				
+				align: right;
+				position: absolute;
+				
+			}
+			.profile {
+				margin-right: 10px;
+			}
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <button type="button" name="Profile">Profile</button>
+        <button class="profile" type="button" name="Profile">Profile</button>
+		<input	 class="logout" type="submit" value="Logout" />
         <form action="login.php">
-          <input type="submit" value="Logout" />
         <div class="container">
             <p>Welcome Student!</p>
             <div  class="login">
                 <div class="name">
                 <p>Enter Classcode:</p>
-                <input type="text">
+                <input class="notbutton" type="text">
                 </div>
                 <br>
                 <button class="mid" type="submit" name="Submit">Enter</button>
