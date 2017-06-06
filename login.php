@@ -1,6 +1,12 @@
 <!-- my name jeff -->
 <!-- my name jeff -->
-<?php include ('connectivity.php'); ?>
+<?php
+  include ('connectivity.php');
+
+  if (isset($_SESSION['login_user'])){
+    header("location: student-page.html");
+  }
+?>
 
 <html>
     <head>
@@ -76,7 +82,7 @@
         <div class="container">
             <img src="http://www.cerebro.com/store/pc/catalog/2JOHN-CARR1.jpg">
             <div class="login">
-                <form method="POST" action="connectivity.php"> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
+                <form method="POST" action=""> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
                 <div class="name">Enter your name:
                     <input type="text" name="Username">
                 </div>
@@ -87,7 +93,7 @@
                 <br>
                 <button type="submit" name="Submit">Login</button>
                 <br>
-                <span style="color:red"> <?php echo $error;//error message will go in here ?></span>
+                <span style="color:red"> <?php echo $error; ?></span>
             </div>
             <br>
             <select class="combo">
