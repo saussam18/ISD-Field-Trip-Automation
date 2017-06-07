@@ -26,20 +26,18 @@
           $query = mysql_query("SELECT * FROM UserName where userName = '$_POST[Username]' AND pass = '$_POST[Password]' AND  type = '$_POST'[s]") or die(mysql_error()); //checks if user and password is avaible
           $row = mysql_fetch_array($query); // fetches data
 
-                  if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
-                      $_SESSION['userName'] = $row['pass'];
-                      if ($row['type'] = 's'){
-                          header("Location: student-page.html");
-                        }
-                        else if ($row['type'] = 'Teacher Access'){
-                          header("Location: teacher-page.html");
-                        }
-
-                  }
-                  else {
-                      $error = "You entered the wrong username and/or password."; //fail
-                  }
-
+            if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
+                $_SESSION['userName'] = $row['pass'];
+                if ($row['type'] = 's'){
+                    header("Location: student-page.html");
+                }
+                else if ($row['type'] = 'Teacher Access'){
+                    header("Location: teacher-page.html");
+                }
+            }
+            else {
+                $error = "You entered the wrong username and/or password."; //fail
+            }
       }
   }
 ?>
