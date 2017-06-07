@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Creating a form</title>
+        <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+        <style>
+            .container {
+                margin: auto;
+                width: 50%;
+                background-color: white;
+                border: 3px solid green;
+                padding: 10px;
+                font-family: "Quattrocento Sans";
+            }
+            img {
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+                display: block;
+
+            }
+            .name {
+                margin: auto;
+                padding-top: 10px;
+
+            }
+            .password {
+                margin: auto;
+                width: 58%;
+                padding: 10px;
+            }
+            button {
+		
+                font-family: "Quattrocento Sans";
+                font-size: 100%;
+                background-color: palegreen;
+                border: 3px solid green;
+            }
+            button.mid {
+                width: 20%;
+                margin-left: 40%;
+                margin-right: 40%;
+                padding: 10px;
+            }
+            .login {
+                margin: auto;
+                border: 3px solid green;
+                padding: 10px;
+                background-color: palegreen;
+            }
+            body {
+                background-color: #defdde;
+
+            }
+            input.notbutton {
+                border: 3px solid green;
+                margin-left: 35%;
+                margin-right: 35%;
+                width: 30%;
+            }
+            p {
+                padding: 10px;
+                text-align: center;
+                margin: auto;
+
+            }
+			.logout {
+				font-family: "Quattrocento Sans";
+                font-size: 100%;
+                background-color: palegreen;
+                border: 3px solid green;
+				
+				align: right;
+				position: absolute;
+				
+			}
+			.profile {
+				margin-right: 10px;
+			}
+			.transport {
+				font-family: "Quattrocento Sans";
+                font-size: 100%;
+                border: 3px solid green;
+				margin-left: 30%;
+                margin-right: 30%;
+                width: 40%;
+			}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<button class="profile" type="button" name="Profile">Profile</button>
+		<input	 class="logout" type="submit" value="Logout" />
+        <form action="login.php">
+        <div class="container">
+            <p>Edit your form information:</p>
+            <div class="login">
+                <div class="name">
+                <p>Field Trip Destination:</p>
+                <input class="notbutton" type="text">
+				<p>Purpose of Field Trip:</p>
+                <input class="notbutton" type="text">
+				<p>School name:</p>
+                <input class="notbutton" type="text">
+				<p>Field Trip Dates:</p>
+                <input class="notbutton" type="text">
+				<p>Field Trip Time:</p>
+                <input class="notbutton" type="text">
+				<p>Type of Tranportation:</p>
+				<select class="transport">
+					<option value="District_Vehicle">District Vehicle by district staff</option>
+					<option value="Arranged_transportation">Parents arrange transportation for their student</option>
+					<option value="district_staff_driver">Private Vehicle by district staff</option>
+					<option value="Volunteer/Parent_Driver">Private Vehicle by Volunteer/Parent</option>
+					<option value="Other">Other</option>
+				</select>
+				<p>Other transportation (optional):</p>
+                <input class="notbutton" type="text">
+                </div>
+                <br>
+                <button class="mid" type="submit" name="Submit">Enter</button>
+                <br>
+            </div>
+        </div>
+	</body>
+</html>
