@@ -85,6 +85,9 @@
                 margin-right: 30%;
                 width: 40%;
 			}
+			.checkboxes {
+				text-align: center;
+			}
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,6 +120,11 @@
 				</select>
 				<p>Other transportation (optional):</p>
                 <input class="notbutton" type="text">
+				<div class="checkboxes">
+					<input type="checkbox" name="extra_requirements" value="Extended_Trip_Itinerary"> Requires Extended Trip Itinerary<br>
+					<input type="checkbox" name="extra_requirements" value="Challenge_Ropes_Course_Release"> Challenge/Ropes Course Release<br>
+					<input type="checkbox" name="extra_requirements" value="Water_Activity_Release"> Water Activity Release<br>
+				</div>
                 </div>
                 <br>
                 <button class="mid" type="submit" name="Submit">Enter</button>
