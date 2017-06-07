@@ -14,9 +14,9 @@
   if (isset($_POST['Submit'])){
       if (empty(['Username']) || empty(['Password'])){
           $error = "You forgot your username and/or password numb nuts";
+          header("Location: login.php");
       }
       else {
-        header("location: login.php");
         SignIn();
       }
   }

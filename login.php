@@ -4,7 +4,7 @@
   include ('connectivity.php');
 
   if (isset($_SESSION['login_user'])){
-    header("location: student-page.html");
+    header("location: connectivity.php");
   }
 ?>
 
