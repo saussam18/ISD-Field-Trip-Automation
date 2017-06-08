@@ -23,21 +23,20 @@
 
   function SignIn() {
       if(!empty($_POST['Username']) && !empty($_POST['Password']))  { //checks if username and password has text and if it exists
-          $query = mysql_query("SELECT * FROM UserName where userName = '$_POST[Username]' AND pass = '$_POST[Password]' AND  type = '$_POST[access]'") or die(mysql_error()); //checks if user and password is avaible
+          $query = mysql_query("SELECT * FROM UserName where userName = '$_POST[Username]' AND pass = '$_POST[Password]'") or die(mysql_error()); //checks if user and password is avaible
           $row = mysql_fetch_array($query); // fetches data
 
               if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
                   $_SESSION['userName'] = $row['pass'];
                   if ($row['type'] = 's'){
                       header("Location: student-page.html");
-                  }
-                  else if ($row['type'] = 'Teacher Access'){
+                  }else if ($row['type'] = 'Teacher Access'){
                       header("Location: teacher-page.html");
                   }
-              }
-              else {
+              }else {
                   $error = "You entered the wrong username and/or password.";
-                  header("Location: login.php"); //fail
+                  //header("Location: login.php"); //fail
+                  echo "sucka dick";
               }
       }
   }
