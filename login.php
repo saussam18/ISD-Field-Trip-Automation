@@ -6,6 +6,8 @@
   if (isset($_SESSION['login_user'])){
     header("location: connectivity.php");
   }
+
+  echo $_SESSION['Error'];
 ?>
 
 <html>
@@ -83,6 +85,7 @@
         <div class="container">
             <img src="http://www.cerebro.com/store/pc/catalog/2JOHN-CARR1.jpg">
             <div class="login">
+<<<<<<< HEAD
                 <form method="POST" action=""> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
                 <p class="name">Enter your name:</p>
                 <div class="textboxes"><input type="text" name="Username"></div>
@@ -93,6 +96,26 @@
                 <div class="buttonalign"><button type="submit" name="Submit">Login</button></div>
                 
                 <span style="color:red"> <?php echo $error; ?></span>
+=======
+                <form method="POST" action="connectivity.php"> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
+                <div class="name">Enter your name:
+                    <input type="text" name="Username">
+                </div>
+                <br>
+                <div class="password">Enter your password:
+                    <input type="password" name="Password">
+                </div>
+                <br>
+                <button type="submit" name="Submit">Login</button>
+                <br>
+                <span style="color:red">
+                    <?php
+                        if (isset($_SESSION['Error'])){
+                          echo $_SESSION['Error'];
+                        }
+                    ?>
+                </span>
+>>>>>>> bf2362ccefdcabf16c79e099e5589499eb2362ca
             </div>
             <br>
             <select class="combo">
