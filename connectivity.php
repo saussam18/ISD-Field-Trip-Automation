@@ -1,6 +1,6 @@
 <?php
   session_start();//session start, only done if submit button is pressed
-  $error = '';
+  $error = "";
 
   define('HOST', 'localhost');//defines host varible, will need to change to server to implement
   define('NAME', 'practice');//finds table sql in code
@@ -14,7 +14,8 @@
   if (isset($_POST['Submit'])){
       if (empty($_POST['Username']) || empty($_POST['Password'])){
           $error = "You forgot your username and/or password numb nuts";
-          header("Location: login.php");
+          echo $error;
+          //header("Location: login.php");
       }
       else {
         SignIn();

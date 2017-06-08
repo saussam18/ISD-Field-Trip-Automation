@@ -2,6 +2,7 @@
 <!-- my name jeff -->
 <?php
   include ('connectivity.php');
+  echo $error;
 
   if (isset($_SESSION['login_user'])){
     header("location: connectivity.php");
