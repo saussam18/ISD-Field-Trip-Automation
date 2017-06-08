@@ -3,46 +3,89 @@
 <html>
     <head>
         <title>Student Page</title>
+		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
         <style>
             .container {
                 margin: auto;
-                width: 50%;
+                width: 75%;
                 background-color: white;
                 border: 3px solid green;
                 padding: 10px;
+                font-family: "Quattrocento Sans";
             }
-            
-            input {
+            img {
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+                display: block;
+            }
+            .name {
+                margin: auto;
+                padding-top: 10px;
+            }
+            .password {
+                margin: auto;
+                width: 58%;
+                padding: 10px;
+            }
+            button {
+                font-family: "Quattrocento Sans";
+                font-size: 100%;
+                background-color: palegreen;
                 border: 3px solid green;
             }
-            
-            p {
+            button.mid {
+                width: 20%;
+                margin-left: 40%;
+                margin-right: 40%;
                 padding: 10px;
+            }
+            .inner {
+                margin: auto;
+                border: 3px solid green;
+                padding: 10px;
+                background-color: palegreen;
+                width: 90%;
+                font-family: "Quattrocento Sans";
             }
             body {
                 background-color: #defdde;
             }
-            button {
-             
-               width: 10%;
-               margin-left: 45%;
-               margin-right: 45%;
-               padding: 10px;
-               background-color: palegreen;
-               border: 3px solid green;            
+            input.notbutton {
+                border: 3px solid green;
+                margin-left: 35%;
+                margin-right: 35%;
+                width: 30%;
             }
-              img {
-                  margin-left: auto;
-                  margin-right: auto;
-                  padding: 10px;
-                  display: block;
-                 
-             }
+            p {
+                padding: 10px;
+                text-align: center;
+                margin: auto;
+            }
+			.logout {
+				font-family: "Quattrocento Sans";
+                font-size: 100%;
+                background-color: palegreen;
+                border: 3px solid green;
+
+				align: right;
+				position: absolute;
+			}
+			.profile {
+				margin-right: 10px;
+			}
+			h1 {
+			text-align: center;
+			}
              
         </style>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>  
+    <body> 
+		<div class="container">
         <h1>Student Form</h1>
+		<div class="inner">
             <h3>Address</h3>
                 <h4>Student Address:</h4>     
                     <input type ="text">
@@ -97,5 +140,7 @@
                     <input type ="text">
                 <h4>-----------</h4>
                     <image src = "https://www.kidvisionvpk.org/images/virtual_img.jpg"/>
+			</div>
+		</div>
     </body>
 </html>
