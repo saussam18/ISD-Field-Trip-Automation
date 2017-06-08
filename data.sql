@@ -10,3 +10,5 @@ VALUES
 ("saussam18","0864196");
 
 ALTER TABLE `username` ADD `type` VARCHAR(1) NOT NULL DEFAULT 's' AFTER `pass`;
+
+INSERT INTO `username` (`UserNameID`, `userName`, `pass`, `type`) VALUES ('2', 'ParkerC', 'compsci', 't');
