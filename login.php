@@ -2,11 +2,12 @@
 <!-- my name jeff -->
 <?php
   include ('connectivity.php');
-  echo $error;
 
   if (isset($_SESSION['login_user'])){
     header("location: connectivity.php");
   }
+
+  echo $_SESSION['Error'];
 ?>
 
 <html>
@@ -94,7 +95,13 @@
                 <br>
                 <button type="submit" name="Submit">Login</button>
                 <br>
-                <span style="color:red"> <?php echo $error; ?></span>
+                <span style="color:red">
+                    <?php
+                        if (isset($_SESSION['Error'])){
+                          echo $_SESSION['Error'];
+                        }
+                    ?>
+                </span>
             </div>
             <br>
             <select class="combo">

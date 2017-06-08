@@ -1,6 +1,6 @@
 <?php
   session_start();//session start, only done if submit button is pressed
-  $error = "";
+  $_SESSION['Error'] = '';
 
   define('HOST', 'localhost');//defines host varible, will need to change to server to implement
   define('NAME', 'practice');//finds table sql in code
@@ -13,9 +13,9 @@
 
   if (isset($_POST['Submit'])){
       if (empty($_POST['Username']) || empty($_POST['Password'])){
-          $error = "You forgot your username and/or password numb nuts";
-          echo $error;
-          //header("Location: login.php");
+          $_SESSION['Error'] = "You forgot your username and/or password numb nuts";
+          //echo $_SESSION['Error'];
+          header("Location: login.php");
       }
       else {
         SignIn();
@@ -31,10 +31,12 @@
                   $_SESSION['userName'] = $row['pass'];
                   if ($row['type'] = 's'){
                       header("Location: student-page.html");
-                  }else if ($row['type'] = 't'){
+                  }
+                  else if ($row['type'] = 't'){
                       header("Location: teacher-page.html");
                   }
-              }else {
+              }
+              else {
                   $error = "You entered the wrong username and/or password.";
                   header("Location: login.php"); //fail
               }
