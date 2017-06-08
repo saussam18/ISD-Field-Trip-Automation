@@ -13,10 +13,9 @@
         <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
         <style>
             .combo {
-                position: absolute;
-                left: 550px;
-                top: 580px;
-                margin: auto;
+                width: 40%;
+				margin-left: 30%;
+                margin-right: 30%;
                 border: 3px solid green;
                 padding: 10px;
                 font-family: "Quattrocento Sans";
@@ -30,6 +29,7 @@
                 padding: 10px;
             }
             img {
+				width: 70%;
                 margin-left: auto;
                 margin-right: auto;
                 padding: 10px;
@@ -37,22 +37,19 @@
 
             }
             .name {
-                margin: auto;
-                width: 50%;
-                padding-top: 10px;
-
+                text-align: center;
             }
             .password {
-                margin: auto;
-                width: 58%;
-                padding: 10px;
+                text-align: center;
             }
+			.buttonalign {
+				text-align: center;
+			}
             button {
                 font-family: "Quattrocento Sans";
-                font-size: 100%;
-                width: 10%;
-                margin-left: 45%;
-                margin-right: 45%;
+                font-size: 20%
+                width: 20%;
+                text-align: center;
                 padding: 10px;
                 background-color: palegreen;
                 border: 3px solid green;
@@ -69,10 +66,14 @@
             }
             input {
                 border: 3px solid green;
+				width: 50%;
             }
             p {
-                padding: 10px;
+                
             }
+			.textboxes {
+				text-align: center;
+			}
         </style>
         <title>JohnCarr.gov</title>
         <meta charset="UTF-8">
@@ -83,25 +84,22 @@
             <img src="http://www.cerebro.com/store/pc/catalog/2JOHN-CARR1.jpg">
             <div class="login">
                 <form method="POST" action=""> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
-                <div class="name">Enter your name:
-                    <input type="text" name="Username">
-                </div>
-                <br>
-                <div class="password">Enter your password:
-                    <input type="password" name="Password">
-                </div>
-                <br>
-                <button type="submit" name="Submit">Login</button>
-                <br>
+                <p class="name">Enter your name:</p>
+                <div class="textboxes"><input type="text" name="Username"></div>
+                
+                <p class="password">Enter your password:</p>
+                <div class="textboxes"><input type="password" name="Password"></div>
+				<br>
+                <div class="buttonalign"><button type="submit" name="Submit">Login</button></div>
+                
                 <span style="color:red"> <?php echo $error; ?></span>
             </div>
             <br>
             <select class="combo">
-              <option value="Student/Guardian Access">Student/Guardian Acess</option>
-                <option value="Employee Access">Employee Access</option>
-                <option value="Secured Access">Secured Access</option>
+				<option value="Student/Guardian Access">Student/Guardian Access</option>
+				<option value="Employee Access">Employee Access</option>
+				<option value="Secured Access">Secured Access</option>
             </select>
-            <br>
             <br>
         </div>
     </body>
