@@ -12,7 +12,7 @@
 
 
   if (isset($_POST['Submit'])){
-      if (empty(['Username']) || empty(['Password'])){
+      if (empty($_POST['Username']) || empty($_POST['Password'])){
           $error = "You forgot your username and/or password numb nuts";
           header("Location: login.php");
       }

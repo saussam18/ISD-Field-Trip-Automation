@@ -82,7 +82,7 @@
         <div class="container">
             <img src="http://www.cerebro.com/store/pc/catalog/2JOHN-CARR1.jpg">
             <div class="login">
-                <form method="POST" action=""> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
+                <form method="POST" action="connectivity.php"> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
                 <div class="name">Enter your name:
                     <input type="text" name="Username">
                 </div>
