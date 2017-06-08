@@ -30,13 +30,12 @@
                   $_SESSION['userName'] = $row['pass'];
                   if ($row['type'] = 's'){
                       header("Location: student-page.html");
-                  }else if ($row['type'] = 'Teacher Access'){
+                  }else if ($row['type'] = 't'){
                       header("Location: teacher-page.html");
                   }
               }else {
                   $error = "You entered the wrong username and/or password.";
-                  //header("Location: login.php"); //fail
-                  echo "sucka dick";
+                  header("Location: login.php"); //fail
               }
       }
   }
