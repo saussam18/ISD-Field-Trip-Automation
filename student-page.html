@@ -26,27 +26,35 @@ and open the template in the editor.
             }
             .name {
                 margin: auto;
-                padding-top: 10px;
-
+                
             }
             .password {
                 margin: auto;
                 width: 58%;
                 padding: 10px;
             }
-            button {
-
-                font-family: "Quattrocento Sans";
-                font-size: 100%;
+			button.top {
+				font-family: "Quattrocento Sans";
+				font-size: 100%;
+				background-color: palegreen;
+                border: 3px solid green;
+				position: absolute;
+			}
+            button.mid {
+				font-family: "Quattrocento Sans";
+                font-size: 20%
+                width: 20%;
+                text-align: center;
+                padding: 10px;
                 background-color: palegreen;
                 border: 3px solid green;
             }
-            button.mid {
-                width: 20%;
-                margin-left: 40%;
-                margin-right: 40%;
-                padding: 10px;
-            }
+			input.buttoninput {
+				font-family: "Quattrocento Sans";
+				font-size: 100%;
+				background-color: palegreen;
+                border: 3px solid green;
+			}
             .login {
                 margin: auto;
                 border: 3px solid green;
@@ -59,50 +67,51 @@ and open the template in the editor.
             }
             input.notbutton {
                 border: 3px solid green;
-                margin-left: 35%;
-                margin-right: 35%;
-                width: 30%;
+				width: 30%;
             }
             p {
                 padding: 10px;
                 text-align: center;
                 margin: auto;
-
             }
-			.logout {
-				font-family: "Quattrocento Sans";
-                font-size: 100%;
-                background-color: palegreen;
-                border: 3px solid green;
-
-				align: right;
-				position: absolute;
-
-			}
 			.profile {
 				margin-right: 10px;
+				position: absolute;
+				margin-bottom: 10px;
+			}
+			.buttoninput {
+				border: 3px solid green;
+				background-color: palegreen;
+				font-family: "Quattrocento Sans";
+                font-size: 100%;
+				margin-left: 70px;
+			}
+			.classcode {
+				text-align: center;
+			}
+			.buttonalign{
+				text-align: center;
 			}
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <button class="profile" type="button" name="Profile">Profile</button>
+        <button class="top" type="button" name="Profile">Profile</button>
         <form action= "login.php">
-          <input type="submit" value="Logout" />
+          <input class="buttoninput" type="submit" value="Logout" />
         </form>
         <div class="container">
             <p>Welcome Student!</p>
-            <div  class="login">
+            <div class="login">
                 <div class="name">
                 <p>Enter Classcode:</p>
-                <input class="notbutton" type="text">
+                <div class="classcode" ><input class="notbutton" type="text"></div>
                 </div>
                 <br>
-                <button class="mid" type="submit" name="Submit">Enter</button>
+                <div class="buttonalign"><button class="mid" type="submit" name="Submit">Enter</button></div>
                 <br>
-                <br>
-                <button class="mid" type="button" name="Change">Change existing forms</button>
+                <div class="buttonalign"><button class="mid" type="button" name="Change">Change existing forms</button></div>
             </div>
         </div>
     </body>
