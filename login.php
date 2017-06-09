@@ -1,5 +1,3 @@
-<!-- my name jeff -->
-<!-- my name jeff -->
 <?php
   include ('connectivity.php');
 
