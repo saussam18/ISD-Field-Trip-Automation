@@ -29,7 +29,7 @@
               if(!empty($row['userName']) AND !empty($row['pass'])) {//checks if user and password is correct
                   $_SESSION['userName'] = $row['pass'];
 
-                  if ($row['type'] == 's' && $row['type'] == $_POSt['combo']){
+                  if ($row['type'] == 's' && $row['type'] == $_POST['combo']){
                     header("Location: student-page.html");
                   }
                   else if ($row['type'] == 't'){
