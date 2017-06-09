@@ -91,7 +91,7 @@
                 <p class="password">Enter your password:</p>
                 <div class="textboxes"><input type="password" name="Password"></div>
 				        <br>
-                <div class="buttonalign"><button type="submit" name="Submit">Login</button></div>      
+                <div class="buttonalign"><button type="submit" name="Submit">Login</button></div>
                 <span style="color:red">
                     <?php
                         if (isset($_SESSION['Error'])){
@@ -101,10 +101,10 @@
                 </span>
             </div>
             <br>
-            <select class="combo">
-				<option value="Student/Guardian Access">Student/Guardian Access</option>
-				<option value="Employee Access">Employee Access</option>
-				<option value="Secured Access">Secured Access</option>
+            <select class="combo" name="combo" >
+				<option value="s">Student/Guardian Access</option>
+				<option value="t">Employee Access</option>
+				<option value="a">Secured Access</option>
             </select>
             <br>
         </div>
