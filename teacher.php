@@ -85,7 +85,12 @@ and open the template in the editor.
             <p>Welcome Teacher!</p>
 
 			<div class=login>
-            <button type="button">Create Form</button>
+        <form method="POST" action=""> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
+            <button type="submit" name = "move">Create Form</button>
+            <?php
+            if(isset($_POST['move']))
+              header('Location: form-customizer.html');
+            ?>
             <br>
             <br>
             <button type="button">Edit Existing Form</button>

@@ -32,8 +32,8 @@
                   if ($row['type'] == 's' && $row['type'] == $_POST['combo']){
                     header("Location: student-page.html");
                   }
-                  else if ($row['type'] == 't'){
-                      header("Location: teacher-page.html");
+                  else if ($row['type'] == 't' && $row['type'] == $_POST['combo']){
+                      header("Location: teacher.php");
                   }
               }
               else {
