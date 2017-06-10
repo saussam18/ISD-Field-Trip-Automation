@@ -30,7 +30,7 @@
                 padding: 10px;
             }
             button {
-		
+
                 font-family: "Quattrocento Sans";
                 font-size: 100%;
                 background-color: palegreen;
@@ -69,10 +69,10 @@
                 font-size: 100%;
                 background-color: palegreen;
                 border: 3px solid green;
-				
+
 				align: right;
 				position: absolute;
-				
+
 			}
 			.profile {
 				margin-right: 10px;
@@ -99,35 +99,36 @@
         <div class="container">
             <p>Edit your form information:</p>
             <div class="login">
+							  <form method="POST" action="createform.php"> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
                 <div class="name">
                 <p>Field Trip Destination:</p>
-                <input class="notbutton" type="text">
+                <input class="notbutton" type="text" name = "place">
 				<p>Purpose of Field Trip:</p>
-                <input class="notbutton" type="text">
+                <input class="notbutton" type="text" name = "purp">
 				<p>School name:</p>
-                <input class="notbutton" type="text">
+                <input class="notbutton" type="text" name = "school">
 				<p>Field Trip Dates:</p>
-                <input class="notbutton" type="text">
+                <input class="notbutton" type="text" name = "date">
 				<p>Field Trip Time:</p>
-                <input class="notbutton" type="text">
+                <input class="notbutton" type="text" name = "time">
 				<p>Type of Tranportation:</p>
 				<select class="transport">
-					<option value="District_Vehicle">District Vehicle by district staff</option>
-					<option value="Arranged_transportation">Parents arrange transportation for their student</option>
-					<option value="district_staff_driver">Private Vehicle by district staff</option>
-					<option value="Volunteer/Parent_Driver">Private Vehicle by Volunteer/Parent</option>
-					<option value="Other">Other</option>
+					<option value="dis">District Vehicle by district staff</option>
+					<option value="par">Parents arrange transportation for their student</option>
+					<option value="pri">Private Vehicle by district staff</option>
+					<option value="vol">Private Vehicle by Volunteer/Parent</option>
+					<option value="o">Other</option>
 				</select>
 				<p>Other transportation (optional):</p>
-                <input class="notbutton" type="text">
+                <input class="notbutton" type="text" name = "othert">
 				<div class="checkboxes">
-					<input type="checkbox" name="extra_requirements" value="Extended_Trip_Itinerary"> Requires Extended Trip Itinerary<br>
-					<input type="checkbox" name="extra_requirements" value="Challenge_Ropes_Course_Release"> Challenge/Ropes Course Release<br>
-					<input type="checkbox" name="extra_requirements" value="Water_Activity_Release"> Water Activity Release<br>
+					<input type="checkbox" name="exttrip" value="Extended_Trip_Itinerary"> Requires Extended Trip Itinerary<br>
+					<input type="checkbox" name="ropes" value="Challenge_Ropes_Course_Release"> Challenge/Ropes Course Release<br>
+					<input type="checkbox" name="water" value="Water_Activity_Release"> Water Activity Release<br>
 				</div>
                 </div>
                 <br>
-                <button class="mid" type="submit" name="Submit">Enter</button>
+                <button class="mid" type="submit" name="create">Enter</button>
                 <br>
             </div>
         </div>
