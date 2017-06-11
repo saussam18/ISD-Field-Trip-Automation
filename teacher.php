@@ -94,6 +94,11 @@ and open the template in the editor.
             <br>
             <br>
             <button type="button">Edit Existing Form</button>
+            <button type="submit" name = "classcode">Create Class</button>
+            <?php
+            if(isset($_POST['classcode']))
+              header('Location: class-creator.html');
+            ?>
             <br>
 
 			</div>
