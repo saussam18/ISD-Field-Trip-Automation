@@ -1,5 +1,5 @@
 function main () {
-  alert('test');
+  alert('finna bust');
 }
 
 $(document).ready(main);
