@@ -1,8 +1,65 @@
 <!DOCTYPE html>
 <!-- ALL CODE IN HERE IS NEEDED, JUST MAKE VISUAL CHANGES. MOSTlY JUST DONT CHANGE VARIBLE NAMES OR REMOVE THE POST METHOD -->
-<form method="POST" action="classcode.php">
+<html>
+    <head>
+        <title>Teacher Page</title>
+		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+        <style>
+        .container {
+            margin: auto;
+            width: 50%;
+            background-color: white;
+            border: 3px solid green;
+            padding: 10px;
+            font-family: "Quattrocento Sans";
+        }
+        body {
+            background-color: #defdde;
+        }
+        button {
+            font-family: "Quattrocento Sans";
+            width: 20%;
+            margin-left: 40%;
+            margin-right: 40%;
+            padding: 10px;
+            font-size: 100%;
+            background-color: palegreen;
+            border: 3px solid green;
+        }
+        input.notbutton {
+            border: 3px solid green;
+            margin-left: 35%;
+            margin-right: 35%;
+            width: 30%;
+        }
+        p {
+            padding: 10px;
+            text-align: center;
+            margin: auto;
+        }
+        input {
+             font-family: "Quattrocento Sans";
+             font-size: 100%;
+             background-color: palegreen;
+             border: 3px solid green;
+  			     align: right;
+             
+  			}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <form action= "../PHP/login.php">
+        <input type="submit" value="Logout" />
+      </form>
+      <form method="POST" action="classcode.php">
+      <div class="container">
+        <p>Enter your Class's name:</p>
 
-<p>Class Name</p>
         <input class="notbutton" type="text" name = "class">
-
-        <button type="submit" name = "cc">Sumbit Class</button>
+        <br>
+        <button type="submit" name = "cc">Submit Class</button>
+      </div>
+  </body>
+</html>
