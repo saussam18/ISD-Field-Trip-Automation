@@ -23,6 +23,23 @@ if (isset($_POST['cc'])){
 }
 
 function classcode(){
+    $randNumber = randNumGen();
+      $check = mysql_query ("SELECT Classcode FROM classes") or die(mysql_error());
+      $res = mysql_fetch_array($check);
+      if ($randNumber == $res){
+        $randNumber = randNumGen();
+      }
+      $sql = "INSERT INTO classes (classcode, classname)
+              VALUES ('".$randNumber."', '".$_POST['class']."')";
+      $result = mysql_query($sql) or die(mysql_error());
+    if (isset($result)){
+                  echo "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
+    } else {
+                  echo "Something went wrong";
+      }
+
+}
+function randNumGen (){
   $randNumberLength = 6;  // length of your giant random number
     $randNumber = NULL;
 
@@ -30,11 +47,8 @@ function classcode(){
         $randNumber .= rand(0, 9);  // add random number to growing giant random number
       }
 
-
-
-        echo "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
+      return $randNumber;
 }
-
 
 
 
