@@ -4,8 +4,7 @@
   if (isset($_SESSION['login_user'])){
     header("location: connectivity.php");
   }
-
-  echo $_SESSION['Error'];
+  
 ?>
 
 <html>
@@ -90,12 +89,7 @@
                 <div class="textboxes"><input type="password" name="Password"></div>
 				        <br>
                 <div class="buttonalign"><button type="submit" name="Submit">Login</button></div>
-                <span style="color:red">
-                    <?php
-                        if (isset($_SESSION['Error'])){
-                          echo $_SESSION['Error'];
-                        }
-                    ?>
+                <span style="color:red"><?php echo $error; ?>
                 </span>
             </div>
             <br>
