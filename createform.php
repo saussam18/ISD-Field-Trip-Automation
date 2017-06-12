@@ -20,12 +20,8 @@ if (isset($_POST['create'])){
         header("Location: form-customizer.html");
     }
     else {
-      CreateClassCode();
       CreateForm();
     }
-}
-function CreateClassCode (){ //Generates class code and stores all the data into the database
-
 }
 
 function CreateForm(){
