@@ -12,7 +12,7 @@
           $error = "You forgot your username and/or password numb nuts";
       }
       else {
-          SignIn();
+          $error = SignIn();
       }
   }
 
@@ -30,7 +30,7 @@
           header("Location: teacher.php");
       }
       else {
-        $error = "You entered the wrong username or password and/or wrong login portal.";
+        return $error = "You entered the wrong username or password and/or wrong login portal.";
       }
   }
 ?>
