@@ -73,6 +73,19 @@ and open the template in the editor.
                 margin-right: 35%;
                 width: 30%;
             }
+      .classes {
+      			font-family: "Quattrocento Sans";
+            font-size: 100%;
+            border: 3px solid green;
+      			margin-left: 30%;
+            margin-right: 30%;
+            width: 40%;
+      }
+      .greenoutline {
+        border: 3px solid green;
+        margin: 5px;
+        padding: 5px;
+      }
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,11 +99,24 @@ and open the template in the editor.
       			<div class=login>
               <form method="POST" action=""> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
                   <button type="submit" name = "move">Create Form</button>
-                  <br>
-                  <br>
-                  <button type="button">Edit Existing Form</button>
                   <button type="submit" name = "classcode">Create Class</button>
-                  <br>
+                  <div class="greenoutline">
+                  <p>Choose class you want to edit:</p>
+                  <select class="classes">
+          					<option value="empty">--Select Class--</option>
+          					<option value="class_1">Class 1</option>
+          					<option value="class_2">Class 2</option>
+          					<option value="class_3">Class 3</option>
+          					<option value="class_4">Class 4</option><
+          					<option value="class_5">Class 5</option>
+                    <option value="class_6">Class 6</option>
+          					<option value="class_7">Class 7</option>
+          					<option value="class_8">Class 8</option>
+          					<option value="class_9">Class 9</option>
+          					<option value="class_10">Class 10</option>
+          				</select>
+                  <button type="button">View/Edit Existing Form</button>
+                </div>
       			</div>
         </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
