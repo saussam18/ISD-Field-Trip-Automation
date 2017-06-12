@@ -89,7 +89,6 @@
             <select class="combo" name="combo" >
 				<option value="s">Student/Guardian Access</option>
 				<option value="t">Employee Access</option>
-				<option value="a">Secured Access</option>
             </select>
             <br>
         </div>
