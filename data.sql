@@ -12,3 +12,7 @@ VALUES
 ALTER TABLE `username` ADD `type` VARCHAR(1) NOT NULL DEFAULT 's' AFTER `pass`;
 
 INSERT INTO `username` (`UserNameID`, `userName`, `pass`, `type`) VALUES ('2', 'ParkerC', 'compsci', 't');
+
+
+
+CREATE TABLE `practice`.`classes` ( `Classcode` INT(6) NULL DEFAULT NULL , `Classname` VARCHAR NOT NULL DEFAULT 'New Class' , `users` INT(255) NOT NULL DEFAULT '0' );
