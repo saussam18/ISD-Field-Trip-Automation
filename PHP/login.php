@@ -82,8 +82,7 @@
                 <div class="textboxes"><input type="password" name="Password"></div>
 				        <br>
                 <div class="buttonalign"><button type="submit" name="Submit">Login</button></div>
-                <span style="color:red"><?php echo $error; ?>
-                </span>
+                <span style="color:red"><?php echo $error; ?></span>
             </div>
             <br>
             <select class="combo" name="combo" >
