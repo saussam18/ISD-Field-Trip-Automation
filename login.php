@@ -1,11 +1,4 @@
-<?php
-  include ('connectivity.php');
-
-  if (isset($_SESSION['login_user'])){
-    header("location: connectivity.php");
-  }
-  
-?>
+<?php include ('connectivity.php');?>
 
 <html>
     <head>
