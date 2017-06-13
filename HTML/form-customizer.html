@@ -94,12 +94,12 @@
 	</head>
 	<body>
 		<button class="profile" type="button" name="Profile">Profile</button>
-		<input	 class="logout" type="submit" value="Logout" />
-        <form action="login.php">
+		<input class="logout" type="submit" value="Logout" />
+        <!--<form action="login.php"> -->
         <div class="container">
             <p>Edit your form information:</p>
             <div class="login">
-							  <form method="POST" action="createform.php"> <!-- DOOOO NOTTTT REMOVE, THIS SHIT MAKES IT WORK -->
+							 <!-- <form method="POST" action="createform.php">--> <!-- I replaced this with js code -->
                 <div class="name">
                 <p>Field Trip Destination:</p>
                 <input class="notbutton" type="text" name = "place">
@@ -128,7 +128,7 @@
 				</div>
                 </div>
                 <br>
-                <button class="mid" type="submit" name="create">Enter</button>
+                <button class="mid" onClick="window.location='create-form.html'" > Next</button>
                 <br>
             </div>
         </div>
