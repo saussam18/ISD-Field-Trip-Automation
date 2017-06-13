@@ -110,9 +110,10 @@ and open the template in the editor.
             <div class="login">
                 <div class="name">
                 <p>Enter Classcode:</p>
-                <div class="classcode" ><input class="notbutton" type="text"></div>
+                  <form method="POST" action="../PHP/codecheck.php">
+                <div class="classcode" ><input class="notbutton" type="text" name = "code"></div>
                 </div>
-                <div class="buttonalign"><button class="mid enter" type="submit" name="Submit">Enter</button></div>
+                <div class="buttonalign"><button class="mid enter" type="submit" name="sub">Enter</button></div>
                 <div class="buttonalign"><button class="mid" type="button" name="Change">Change existing forms</button></div>
             </div>
         </div>
