@@ -22,15 +22,22 @@
       $query = mysql_query("SELECT * FROM UserName where userName = '$_POST[Username]' AND pass = '$_POST[Password]'
         AND type = '$_POST[combo]'") or die(mysql_error()); //checks if user and password is avaible
       $row = mysql_fetch_array($query); // fetches data
-
+          include ('user.php');
       if ($row['type'] == 's' && $row['type'] == $_POST['combo']){
+        $user = new user ($_POST['Username'], 's');
+          $_SESSION['user'] = $user;
           header("Location: ../HTML/student-page.html");
       }
       else if ($row['type'] == 't' && $row['type'] == $_POST['combo']){
+        $user = new user ($_POST['Username'], 't');
+        $_SESSION['user'] = $user;
           header("Location: ../HTML/teacher-page.html");
       }
       else {
         return $error = "You entered the wrong username or password and/or wrong login portal.";
       }
   }
+
+
+
 ?>

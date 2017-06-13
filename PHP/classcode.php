@@ -1,4 +1,5 @@
 <?php
+  require('user.php');
 session_start();//session start, only done if submit button is pressed
 $_SESSION['Error'] = '';
 
@@ -28,11 +29,12 @@ function classcode(){
       if ($randNumber == $res){
         $randNumber = randNumGen();
       }
-      $sql = "INSERT INTO classes (classcode, classname)
-              VALUES ('".$randNumber."', '".$_POST['class']."')";
+      $per = $_SESSION['user']->getName();
+      $sql = "INSERT INTO classes (username, classcode, classname)
+              VALUES ('".$per."','".$randNumber."', '".$_POST['class']."')";
       $result = mysql_query($sql) or die(mysql_error());
     if (isset($result)){
-                  $class = new course ($randNumber, $_POST['class']);
+                  $class = new course ($randNumber, $_POST['class'], $_SESSION['user']);
                   echo "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
     } else {
                   echo "Something went wrong";
@@ -54,30 +56,32 @@ function randNumGen (){
 }
 
 class course {
+
   private $classcode;
   private $classname;
   private $users = 0;
-  private $students = array ();
+  private $user;
 
-  public function  __construct($code, $name) {
+  public function  __construct($code, $name, $user) {
     $this->classcode = $code;
     $this->classname = $name;
+    $this->user = $user;
   }
   public function addstudent ($student){
     array_push($students, $student);
     $this->users = $users + 1;
   }
   public function getName(){
-    return $classname;
+    return $this ->classname;
   }
   public function getUsers(){
-    return $users;
+    return $this->users;
   }
   public function getClasscode(){
     return $this->classcode;
   }
-  public function getStudents(){
-      return $students;
+  public function getUser(){
+      return $this->user;
   }
 }
 

@@ -16,3 +16,5 @@ INSERT INTO `username` (`UserNameID`, `userName`, `pass`, `type`) VALUES ('2', '
 
 
 CREATE TABLE `practice`.`classes` ( `Classcode` INT(6) NULL DEFAULT NULL , `Classname` VARCHAR NOT NULL DEFAULT 'New Class' , `users` INT(255) NOT NULL DEFAULT '0' );
+
+ALTER TABLE `classes` ADD `username` VARCHAR(40) NULL DEFAULT NULL FIRST;
