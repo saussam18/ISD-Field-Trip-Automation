@@ -37,7 +37,7 @@ function classcode(){
     } else {
                   echo "Something went wrong";
       }
- echo '\n';
+      echo "                        ";
           echo $class->getClasscode();
 
 
