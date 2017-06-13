@@ -1,5 +1,4 @@
 <?php
-
 session_start();//session start, only done if submit button is pressed
 $_SESSION['Error'] = '';
 
@@ -13,16 +12,16 @@ $find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" 
 
 if (isset($_POST['cc'])){
     if (empty($_POST['class'])){
-        $_SESSION['Error'] = "Form not fully filled out, please fill all boxes";
-        //echo $_SESSION['Error'];
-        header("Location: class-creator.html");
+      echo "error occured somewhere";
     }
     else {
       classcode();
+
     }
 }
 
 function classcode(){
+
     $randNumber = randNumGen();
       $check = mysql_query ("SELECT Classcode FROM classes") or die(mysql_error());
       $res = mysql_fetch_array($check);
@@ -33,10 +32,14 @@ function classcode(){
               VALUES ('".$randNumber."', '".$_POST['class']."')";
       $result = mysql_query($sql) or die(mysql_error());
     if (isset($result)){
+                  $class = new course ($randNumber, $_POST['class']);
                   echo "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
     } else {
                   echo "Something went wrong";
       }
+ echo '\n';
+          echo $class->getClasscode();
+
 
 }
 function randNumGen (){
@@ -50,6 +53,33 @@ function randNumGen (){
       return $randNumber;
 }
 
+class course {
+  private $classcode;
+  private $classname;
+  private $users = 0;
+  private $students = array ();
+
+  public function  __construct($code, $name) {
+    $this->classcode = $code;
+    $this->classname = $name;
+  }
+  public function addstudent ($student){
+    array_push($students, $student);
+    $this->users = $users + 1;
+  }
+  public function getName(){
+    return $classname;
+  }
+  public function getUsers(){
+    return $users;
+  }
+  public function getClasscode(){
+    return $this->classcode;
+  }
+  public function getStudents(){
+      return $students;
+  }
+}
 
 
 
