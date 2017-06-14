@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php require_once('../PHP/user.php');
+ob_start();
 session_start();//session start, only done if submit button is pressed
 
 define('HOST', 'localhost');//defines host varible, will need to change to server to implement
@@ -143,25 +144,50 @@ if($num !=0 ) {
         </form>
         <div class="container">
             <p>Welcome Student!</p>
+            <?php
+              echo "<p>".$_SESSION['delete']."</p>";
+              $_SESSION['delete'] = NULL;
+              echo "<p>".$_SESSION['try']."</p>";
+              $_SESSION['try'] = NULL;
+            ?>
             <div class="login">
                 <div class="name">
                 <p>Enter Classcode:</p>
                   <form method="POST" action="../PHP/codecheck.php">
                 <div class="classcode" ><input class="notbutton" type="text" name = "code"></div>
                 </div>
+
                 <div class="buttonalign"><button class="mid enter" type="submit" name="sub">Enter</button></div>
                 <div class="greenoutline">
+                      </form>
+                  <form method="GET" action = "">
                           <p>Choose the class you want to view:</p>
-                        <p>  <select class="form"> </p>
-                  					<option value="empty">--Select Form--</option>
+                        <p><select class="class" name = "combo"> </p>
+                  					<option value="empty">--Select Class--</option>
                             <?php
+                            $cns = array();
                                       for ($i = 0; $i < sizeof($classArr); $i++){
+                                        $st = "class" . ($i + 1);
+                                        array_push($cns, $st);
                                        $cl = $classArr[$i];
-                                        echo "<option value=".$i.">".$cl."</option>";
+                                        echo "<option value=".$st." name=".$st.">".$cl."</option>";
                                       }
                                   ?>
                   				</select>
-                            <div class="buttonalign"><button class="mid" type="button" name="del">Delete Class</button></div>
+                          <?php
+                          if (isset($_GET['del'])){
+                          for( $j = 1; $j <= 7; $j++){
+                            if(!empty($get['class' . $j])){
+                                $_SESSION['col'] = 'class' . $j;
+                                  include_once("../PHP/delete.php");
+                                }else{
+                                }
+                            }
+                          }
+                          ?>
+                            <div class="buttonalign"><button class="mid" type="submit" name="del">Delete Class</button></div>
+                            <br>
+
                 <div class="buttonalign"><button class="mid" type="button" name="Change">Change Class Forms</button></div>
             </div>
         </div>

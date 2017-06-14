@@ -26,14 +26,15 @@ function check(){
     if($row['classcode'] == $_POST['code']){
       $find = mysql_query("SELECT * FROM username");
       $get = mysql_fetch_array($find);
-      findNull($get);
-      echo "success";
+      findNull($get, $_POST['code']);
+
+    $_SESSION['try'] = "You have Successfully entered the classcode";
     } else {
-      echo "Classcode does not exist";
+    $_SESSION['try'] = "Classcode does not exist";
     }
 }
-function findNull ($get){
-  $find =  mysql_query("SELECT classname FROM classes") or  die(mysql_error());
+function findNull ($get, $code){
+  $find =  mysql_query("SELECT classname FROM classes WHERE classcode = '$code'") or  die(mysql_error());
   $res =  mysql_fetch_array($find);
   $per = $_SESSION['user']->getName();
   $name = $res['classname'];

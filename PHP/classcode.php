@@ -1,5 +1,5 @@
 <?php
-  require('course.php');
+require_once("user.php");
 session_start();//session start, only done if submit button is pressed
 $_SESSION['Error'] = '';
 
@@ -13,16 +13,15 @@ $find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" 
 
 if (isset($_POST['cc'])){
     if (empty($_POST['class'])){
-      echo "error occured somewhere";
+      $_SESSION['create'] =  "You forgot to Enter a name";
     }
     else {
       classcode();
-
     }
+      header('Location:../HTML/teacher-page.php');
 }
 
 function classcode(){
-
     $randNumber = randNumGen();
       $check = mysql_query ("SELECT Classcode FROM classes") or die(mysql_error());
       $res = mysql_fetch_array($check);
@@ -34,12 +33,10 @@ function classcode(){
               VALUES ('".$per."','".$randNumber."', '".$_POST['class']."')";
       $result = mysql_query($sql) or die(mysql_error());
     if (isset($result)){
-                  echo "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
+                  $_SESSION['create'] = "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
     } else {
-                  echo "Something went wrong";
+                $_SESSION['create'] = "Something went wrong";
       }
-      echo "                        ";
-          echo $class->getClasscode();
 
 
 }
@@ -48,7 +45,7 @@ function randNumGen (){
     $randNumber = NULL;
 
       for ($i = 0; $i < $randNumberLength; $i++) {
-        $randNumber .= rand(0, 9);  // add random number to growing giant random number
+        $randNumber .= rand(1, 9);  // add random number to growing giant random number
       }
 
       return $randNumber;

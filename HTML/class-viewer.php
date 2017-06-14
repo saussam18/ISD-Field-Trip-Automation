@@ -4,6 +4,23 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
+<?php
+require_once('../PHP/user.php');
+require_once('../PHP/course.php');
+ob_start();
+session_start();//session start, only done if submit button is pressed
+
+define('HOST', 'localhost');//defines host varible, will need to change to server to implement
+define('NAME', 'practice');//finds database sql in code
+define('USER','root');//user name to access database, default is always root
+define('PASSWORD','');//password to access user name, default is always blank
+
+$connect = mysql_connect(HOST,USER,PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); //checks that it can connect to server
+$find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" . mysql_error()); //checks if database exists
+
+  $current = $_SESSION['course'];
+?>
 <html>
     <head>
         <title>Viewing class</title>
@@ -126,13 +143,30 @@ and open the template in the editor.
           <input class="buttoninput" type="submit" value="Logout" />
         </form>
         <div class="container">
-            <p>--Insert class name here--</p>
+          <?php
+          $cn = $current->getName();
+          echo "<p class=classcode name=classcode>".$cn."</p>"
+           ?>
             <div class="login">
                 <div class="name">
                 <p>Classcode:</p>
-                <p class="classcode">--Insert classcode here<!--  --></p>
+                <?php
+                $code = $current->getClasscode();
+                echo "<p class=classcode name=classcode>".$code."</p>"
+                 ?>
                 <p>Students enrolled:</p>
-                <p class="students"> --Insert students enrolled here--
+                <?php
+                $sql = mysql_query("SELECT userName FROM username WHERE type = 's' AND (class1 = '$cn' OR class2 = '$cn' OR class3 = '$cn' OR class4 = '$cn' OR class5 = '$cn' OR class6 = '$cn' OR class7 = '$cn')");
+                $num = mysql_num_rows($sql);
+                if($num !=0 ) {
+                  while ($get = mysql_fetch_assoc($sql)){
+                      $student = $get['userName'];
+                      echo "<p class=student name=students>".$student."</p>";
+                  }
+                }else{
+                  echo "<p class=students> No students currently enrolled </p>";
+                }
+                 ?>
                 </div>
                 <div class="greenoutline">
                 <p>Choose a form you want to send to this class:</p>
@@ -149,7 +183,18 @@ and open the template in the editor.
                   <option value="form_9">Form 9</option>
                   <option value="form_10">Form 10</option>
                 </select>
+                <br>
+                <br>
                 <button type="button">Send Form</button>
+                <br>
+                  <br>
+                    <form method="POST">
+                  <?php
+                  include_once('../PHP/delete.php');
+                  ?>
+                  <form method="GET"action="teacher-page.php">
+                <button type="submit" vaule="redirect" name="del">Delete Class</button>
+                  </form>
               </div>
                 </div>
             </div>

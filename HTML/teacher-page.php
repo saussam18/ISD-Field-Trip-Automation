@@ -8,8 +8,9 @@ and open the template in the editor.
 
 <?php require_once('../PHP/user.php');
 require_once('../PHP/course.php');
+require_once('../HTML/teacher-page.php');
 session_start();//session start, only done if submit button is pressed
-
+ob_start();
 define('HOST', 'localhost');//defines host varible, will need to change to server to implement
 define('NAME', 'practice');//finds database sql in code
 define('USER','root');//user name to access database, default is always root
@@ -19,15 +20,13 @@ $connect = mysql_connect(HOST,USER,PASSWORD) or die("Failed to connect to MySQL:
 $find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" . mysql_error()); //checks if database exists
 $courseArr= array ();
   $per = $_SESSION['user']->getName();
-$sql =  mysql_query("SELECT classname FROM classes where username = '$per'") or die(mysql_error());
+$sql =  mysql_query("SELECT classname, classcode FROM classes where username = '$per'") or die(mysql_error());
 $num = mysql_num_rows($sql);
 if($num !=0 ) {
   while ($get = mysql_fetch_assoc($sql)){
-      $class = new course ($get['classname'], $per);
+      $class = new course ($get['classname'], $per, $get['classcode']);
       array_push($courseArr,$class);
   }
-} else{
-  echo "nothing";
 }
 ?>
 
@@ -126,46 +125,46 @@ if($num !=0 ) {
         </form>
         <div class="container">
             <p>Welcome Teacher!</p>
-      			<div class=login>
+      			<div class=login> <?php
+            if (!empty($_SESSION['delete']) || !empty($_SESSION['create'])){
+              echo "<p>".$_SESSION['delete']."</p>";
+              $_SESSION['delete'] = NULL;
+              echo "<p>".$_SESSION['create']."</p>";
+              $_SESSION['create'] = NULL;
+            }
+             ?>
               <button onClick= "window.location='form-customizer.html'">Create Form</button>
               <br>
               <br>
               <button onCLick = "window.location='class-creator.html'">Create new class</button>
               <br>
-              <div class="greenoutline">
-                  <p>Choose form you want to edit:</p>
-                  <select class="form">
-          					<option value="empty">--Select Form--</option>
-          					<option value="form_1">Form 1</option>
-          					<option value="form_2">Form 2</option>
-          					<option value="form_3">Form 3</option>
-          					<option value="form_4">Form 4</option><
-          					<option value="form_5">Form 5</option>
-							<option value="form_6">Form 6</option>
-          					<option value="form_7">Form 7</option>
-          					<option value="form_8">Form 8</option>
-          					<option value="form_9">Form 9</option>
-          					<option value="form_10">Form 10</option>
-          				</select>
-                  <br>
-                  <br>
-                  <button type="button">View/Edit Selected Form</button>
-                </div>
 				<div class="greenoutline">
                   <p>Choose the class you want to view:</p>
-                  <p><select class="clas"> </p>
-          					<option value="empty">--Select Form--</option>
+                    <form method="POST" action="">
+                  <p><select class="class" name = "combo"> </p>
+          					<option value="empty">--Select Class--</option>
                     <?php
+                        $cou = array();
                               for ($i = 0; $i < sizeof($courseArr); $i++){
                                $cour = $courseArr[$i]->getName();
-                                echo "<option value=".$i.">".$cour."</option>";
+                               array_push($cou, $cour);
+                                echo "<option value=".$cour." name=".$i.">".$cour."</option>";
                               }
                           ?>
           				</select>
                   <br>
                   <br>
-                  <button type="submit">Delete Class</button>
-                  <button type="sumbit">View Class</button>
+                  <button type="sumbit" name = "view" >View Class</button>
+                  <?php
+                if (isset($_POST['view'])){
+                for ($j = 0; $j < sizeof($courseArr); $j++){
+                    if ($_POST['combo'] == $cou[$j]){
+                        $_SESSION['course'] = $courseArr[$j];
+                        header("Location:class-viewer.php");
+                    }
+                  }
+                }
+                 ?>
                 </div>
       			</div>
         </div>
