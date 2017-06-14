@@ -145,26 +145,25 @@ $find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" 
         <div class="container">
           <?php
           $cn = $current->getName();
-          echo "<p class=classcode name=classcode>".$cn."</p>"
+          echo "<p class=classcode name=classcode><strong>".$cn."</strong></p>"
            ?>
             <div class="login">
                 <div class="name">
                 <p>Classcode:</p>
                 <?php
                 $code = $current->getClasscode();
-                echo "<p class=classcode name=classcode>".$code."</p>"
+                echo "<p class=classcode name=classcode><strong>".$code."</strong></p>"
                  ?>
                 <p>Students enrolled:</p>
                 <?php
                 $sql = mysql_query("SELECT userName FROM username WHERE type = 's' AND (class1 = '$cn' OR class2 = '$cn' OR class3 = '$cn' OR class4 = '$cn' OR class5 = '$cn' OR class6 = '$cn' OR class7 = '$cn')");
-                $num = mysql_num_rows($sql);
-                if($num !=0 ) {
+                if(mysql_num_rows($sql) != 0) {
                   while ($get = mysql_fetch_assoc($sql)){
                       $student = $get['userName'];
-                      echo "<p class=student name=students>".$student."</p>";
+                      echo "<p class=student name=students> <strong>".$student."</strong></p>";
                   }
                 }else{
-                  echo "<p class=students> No students currently enrolled </p>";
+                  echo "<p class=students> <strong> No students currently enrolled </strong> </p>";
                 }
                  ?>
                 </div>

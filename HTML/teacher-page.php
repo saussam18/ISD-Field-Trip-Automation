@@ -126,9 +126,10 @@ if($num !=0 ) {
         <div class="container">
             <p>Welcome Teacher!</p>
       			<div class=login> <?php
-            if (!empty($_SESSION['delete']) || !empty($_SESSION['create'])){
+            if (!empty($_SESSION['delete'])){
               echo "<p>".$_SESSION['delete']."</p>";
               $_SESSION['delete'] = NULL;
+            } if (!empty($_SESSION['create'])){
               echo "<p>".$_SESSION['create']."</p>";
               $_SESSION['create'] = NULL;
             }
