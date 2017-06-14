@@ -102,15 +102,19 @@
 							 <!-- <form method="POST" action="createform.php">--> <!-- I replaced this with js code -->
                 <div class="name">
                 <p>Field Trip Destination:</p>
-                <input class="notbutton" type="text" name = "place">
+                <input class="notbutton" type="text" name = "place" id="place">
 				<p>Purpose of Field Trip:</p>
-                <input class="notbutton" type="text" name = "purp">
+                <input class="notbutton" type="text" name = "purp" id="purp">
 				<p>School name:</p>
-                <input class="notbutton" type="text" name = "school">
-				<p>Field Trip Dates:</p>
-                <input class="notbutton" type="text" name = "date">
-				<p>Field Trip Time:</p>
-                <input class="notbutton" type="text" name = "time">
+                <input class="notbutton" type="text" name = "school" id= "school">
+				<p>Field Trip Start Date:</p>
+                <input class="notbutton" type="text" name = "start_date" id= "start_date">
+				<p>Field Trip End Date:</p>
+                <input class="notbutton" type="text" name = "end_date" id= "end_date">
+				<p>Field Trip Start Time:</p>
+                <input class="notbutton" type="text" name = "start_time" id= "start_time">
+				<p>Field Trip End Time:</p>
+                <input class="notbutton" type="text" name = "end_time" id= "end_time">
 				<p>Type of Tranportation:</p>
 				<select class="transport">
 					<option value="dis">District Vehicle by district staff</option>
@@ -128,9 +132,12 @@
 				</div>
                 </div>
                 <br>
-                <button class="mid" onClick="window.location='create-form.html'" > Next</button>
+                <!--<button class="mid" onClick="window.location='create-form.html'" > Next</button>-->
+								<button class="mid" id="next"> Next</button>
                 <br>
             </div>
         </div>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
+	      <script src="../JS/fill-out-form.js"></script>
 	</body>
 </html>
