@@ -96,6 +96,11 @@ and open the template in the editor.
 			.enter {
 				margin-bottom: 10px;
 			}
+      .greenoutline {
+        border: 3px solid green;
+        margin: 5px;
+        padding: 5px;
+      }
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,16 +121,17 @@ and open the template in the editor.
                 <div class="buttonalign"><button class="mid enter" type="submit" name="sub">Enter</button></div>
                 <div class="greenoutline">
                           <p>Choose the class you want to view:</p>
-                          <select class="form">
+                        <p>  <select class="form"> </p>
                   					<option value="empty">--Select Form--</option>
-                  					<option value="class_1">Class 1</option>
-                  					<option value="class_2">Class 2</option>
-                  					<option value="class_3">Class 3</option>
-                  					<option value="class_4">Class 4</option><
-                  					<option value="class_5">Class 5</option>
-        							      <option value="class_6">Class 6</option>
-                  					<option value="class_7">Class 7</option>
+                  					<option value="class_1" name = "one"> <?php ?></option>
+                  					<option value="class_2" name = "two"><?php ?></option>
+                  					<option value="class_3" name = "three"><?php ?></option>
+                  					<option value="class_4" name = "four"><?php ?></option><
+                  					<option value="class_5" name = "five" ><?php ?></option>
+        							      <option value="class_6" name = "six"><?php ?></option>
+                  					<option value="class_7" name = "seven"><?php ?></option>
                   				</select>
+                            <div class="buttonalign"><button class="mid" type="button" name="del">Delete Class</button></div>
                 <div class="buttonalign"><button class="mid" type="button" name="Change">Change Class Forms</button></div>
             </div>
         </div>

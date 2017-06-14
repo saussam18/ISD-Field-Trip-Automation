@@ -4,6 +4,36 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
+
+<?php require_once('../PHP/user.php');
+require_once('../PHP/course.php');
+session_start();//session start, only done if submit button is pressed
+
+define('HOST', 'localhost');//defines host varible, will need to change to server to implement
+define('NAME', 'practice');//finds database sql in code
+define('USER','root');//user name to access database, default is always root
+define('PASSWORD','');//password to access user name, default is always blank
+
+$connect = mysql_connect(HOST,USER,PASSWORD) or die("Failed to connect to MySQL: " . mysql_error()); //checks that it can connect to server
+$find = mysql_select_db(NAME,$connect) or die("Failed to find to MySQL Server:" . mysql_error()); //checks if database exists
+$courseArr= array ();
+  $per = $_SESSION['user']->getName();
+$sql =  mysql_query("SELECT classname FROM classes where username = '$per'") or die(mysql_error());
+$num = mysql_num_rows($sql);
+if($num !=0 ) {
+  while ($get = mysql_fetch_assoc($sql)){
+      $class = new course ($get['classname'], $per);
+      array_push($courseArr,$class);
+  }
+} else{
+  echo "nothing";
+}
+?>
+
+
+
+
 <html>
     <head>
         <title>Teacher Page</title>
@@ -123,22 +153,19 @@ and open the template in the editor.
                 </div>
 				<div class="greenoutline">
                   <p>Choose the class you want to view:</p>
-                  <select class="form">
+                  <p><select class="clas"> </p>
           					<option value="empty">--Select Form--</option>
-          					<option value="class_1">Class 1</option>
-          					<option value="class_2">Class 2</option>
-          					<option value="class_3">Class 3</option>
-          					<option value="class_4">Class 4</option><
-          					<option value="class_5">Class 5</option>
-							      <option value="class_6">Class 6</option>
-          					<option value="class_7">Class 7</option>
-          					<option value="class_8">Class 8</option>
-          					<option value="class_9">Class 9</option>
-          					<option value="class_10">Class 10</option>
+                    <?php
+                              for ($i = 0; $i < sizeof($courseArr); $i++){
+                               $cour = $courseArr[$i]->getName();
+                                echo "<option value=".$i.">".$cour."</option>";
+                              }
+                          ?>
           				</select>
                   <br>
                   <br>
-                  <button type="button">View Class</button>
+                  <button type="submit">Delete Class</button>
+                  <button type="sumbit">View Class</button>
                 </div>
       			</div>
         </div>
