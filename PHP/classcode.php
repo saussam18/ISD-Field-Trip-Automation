@@ -1,5 +1,5 @@
 <?php
-  require('user.php');
+  require('course.php');
 session_start();//session start, only done if submit button is pressed
 $_SESSION['Error'] = '';
 
@@ -34,7 +34,6 @@ function classcode(){
               VALUES ('".$per."','".$randNumber."', '".$_POST['class']."')";
       $result = mysql_query($sql) or die(mysql_error());
     if (isset($result)){
-                  $class = new course ($randNumber, $_POST['class'], $_SESSION['user']);
                   echo "You have created a new class called  {$_POST['class']}. Your Classcode is $randNumber";
     } else {
                   echo "Something went wrong";
@@ -55,35 +54,7 @@ function randNumGen (){
       return $randNumber;
 }
 
-class course {
 
-  private $classcode;
-  private $classname;
-  private $users = 0;
-  private $user;
-
-  public function  __construct($code, $name, $user) {
-    $this->classcode = $code;
-    $this->classname = $name;
-    $this->user = $user;
-  }
-  public function addstudent ($student){
-    array_push($students, $student);
-    $this->users = $users + 1;
-  }
-  public function getName(){
-    return $this ->classname;
-  }
-  public function getUsers(){
-    return $this->users;
-  }
-  public function getClasscode(){
-    return $this->classcode;
-  }
-  public function getUser(){
-      return $this->user;
-  }
-}
 
 
 

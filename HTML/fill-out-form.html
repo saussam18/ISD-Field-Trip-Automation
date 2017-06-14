@@ -83,10 +83,8 @@
         </style>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
-    <script src="../JS/fill-out-form.js"></script>
     </head>
-    <body onload="setFieldTripInfo();">
+    <body>
 		<div class="container">
         <h1>Issaquah School District</h1>
 		<h1>Field/Activity Trip-Parent/Guardian Permission Form</h1>
@@ -95,9 +93,10 @@
 					<p>As a parent or guardian of a student requesting to voluntarily participate in a field trip, I hereby acknowledge that I have read, understood and agreed to the following:</p>
 						<br>
 							<div class="inner">
-								<p>Field Trip Destination <span id= "destination_blank">____________________________</span>Purpose<span id= "purpose_blank">________________________________</span></p>
-								<p>I hereby give my permission for ______________________________ who attends<span id= "school_blank">__________________</span></p>
-								<p>to participate in a field trip on <span id= "start_date_blank">_________________</span>. Time involved: From<span id= "start_time_blank">________</span>To<span id= "end_time_blank">__________</span></p>
+								<p>Field Trip Destination <span>____________________________</span> Purpose <span>________________________________</span></p>
+								<p>I hereby give my permission for <span>______________________________</span> who attends <span>__________________</span></p>
+								<p>(Print Student’s Name) (School Name)</p>
+								<p>to participate in a field trip on (date) <span>_________________</span>. Time involved: From <span>________</span> To <span>__________</span></p>
 								<p>Type of Transportation:</p>
 								<p><span>______</span> District Vehicle by district staff</p>
 								<p><span>______</span> District is not providing transportation. Parents arrange transportation for their student</p>
@@ -128,14 +127,14 @@
 						<br>
 							<div class="inner">
 								<p>[To be completed by ISD staff] Required attachments checked below:</p>
-								<p>Extended Trip Itinerary <span>_____</span> Challenge/Ropes Course Release </span>_____</span> Water Activity Release <span>_____</span></p>
+								<p>Extended Trip Itinerary <span>_____</span> Challenge/Ropes Course Release <span>_____</span> Water Activity Release <span>_____<span></p>
 							</div>
 						<br>
 						<p>Being fully informed as to these risks, I hereby consent to my child participating in this Field Trip.</p>
-						<p>________________________________________________________________________________</p>
+						<div class="centerbutton"><input type="text"></div>
 						<p>Signature of Parent/Guardian, Date, Work/Daytime Phone</p>
 			</div>
-			<div class="centerbutton"><button type="button">Save Form</button></div>
+			<div class="centerbutton"><button type="button">Submit Form</button></div>
 		</div>
     </body>
 </html>

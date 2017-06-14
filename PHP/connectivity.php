@@ -26,12 +26,12 @@
       if ($row['type'] == 's' && $row['type'] == $_POST['combo']){
         $user = new user ($_POST['Username'], 's');
           $_SESSION['user'] = $user;
-          header("Location: ../HTML/student-page.html");
+          header("Location: ../HTML/student-page.php");
       }
       else if ($row['type'] == 't' && $row['type'] == $_POST['combo']){
         $user = new user ($_POST['Username'], 't');
         $_SESSION['user'] = $user;
-          header("Location: ../HTML/teacher-page.html");
+          header("Location: ../HTML/teacher-page.php");
       }
       else {
         return $error = "You entered the wrong username or password and/or wrong login portal.";
