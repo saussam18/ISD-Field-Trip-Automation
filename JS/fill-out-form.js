@@ -13,11 +13,11 @@ var challengeCourse = false;
 var waterActivity = false;
 
 function next() {
-    getFieldTripInfo();
-    //getDestination();
-    //alert(destination);
-    //setFieldTripInfo();
-    window.location='create-form.php';
+  //  getFieldTripInfo();
+  //  getDestination();
+  //  alert(destination);
+    setFieldTripInfo();
+    window.location='../HTML/create-form.php';
 }
 
 function getFieldTripInfo() {
