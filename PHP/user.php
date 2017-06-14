@@ -1,5 +1,4 @@
 <?php
-
 class user {
   private $accessName;
   private $accessType;
