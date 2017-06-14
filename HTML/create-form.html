@@ -80,8 +80,10 @@
         </style>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
+    <script src="../JS/fill-out-form.js"></script>
     </head>
-    <body>
+    <body onload="setFieldTripInfo();">
 		<div class="container">
         <h1>Issaquah School District</h1>
 		<h1>Field/Activity Trip-Parent/Guardian Permission Form</h1>
@@ -90,10 +92,9 @@
 					<p>As a parent or guardian of a student requesting to voluntarily participate in a field trip, I hereby acknowledge that I have read, understood and agreed to the following:</p>
 						<br>
 							<div class="inner">
-								<p>Field Trip Destination <span>____________________________</span>Purpose<span>________________________________</span></p>
-								<p>I hereby give my permission for <span>______________________________</span> who attends<span>__________________</span></p>
-								<p>(Print Student’s Name) (School Name)</p>
-								<p>to participate in a field trip on (date) <span>_________________</span>. Time involved: From<span>________</span>To<span>__________</span></p>
+								<p>Field Trip Destination <span id= "destination_blank">____________________________</span>Purpose<span id= "purpose_blank">________________________________</span></p>
+								<p>I hereby give my permission for ______________________________ who attends<span id= "school_blank">__________________</span></p>
+								<p>to participate in a field trip on <span id= "start_date_blank">_________________</span>. Time involved: From<span id= "start_time_blank">________</span>To<span id= "end_time_blank">__________</span></p>
 								<p>Type of Transportation:</p>
 								<p><span>______</span>District Vehicle by district staff</p>
 								<p><span>______</span>District is not providing transportation. Parents arrange transportation for their student</p>

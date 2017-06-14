@@ -1,4 +1,4 @@
-var destination = "";
+var destination = "test";
 var purpose = "";
 var schoolName = "";
 var startDate = "";
@@ -10,15 +10,13 @@ var extendedTrip = false;
 var challengeCourse = false;
 var waterActivity = false;
 
-function main () {
-    $("#next").click (function () {
-      getFieldTripInfo();
-      window.location='create-form.html';
-    });
+function next() {
+    getFieldTripInfo();
+    //getDestination();
+    window.location='create-form.html';
 }
 
 function getFieldTripInfo() {
-  destination = $('#place').val();
   purpose = $('#purp').val();
   schoolName = $('#school').val();
   startDate = $('#start_date').val();
@@ -29,8 +27,17 @@ function getFieldTripInfo() {
   //add extended trip and below later
 }
 
-function setFieldTripInfo () {
-  
+function getDestination(){
+  alert($('#place').val());
+  return $('#place').val();
 }
 
-$(document).ready(main);
+function setFieldTripInfo () {
+  alert(destination);
+  $('#destination_blank').text(destination + "\t");
+  /*$('#purpose_blank').val(purpose);
+  $('#school_blank').val(schoolName);
+  $('#start_date_blank').val() = startDate;
+  $('#start_time_blank').val() = startTime;
+  $('#end_time_blank').val() = endTime;*/
+}
