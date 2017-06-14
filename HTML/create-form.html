@@ -1,25 +1,5 @@
 <!DOCTYPE html>
-<?php
-  $packed = $_POST['formInfo'];
-  $formInfo = split(',', $packed);
 
-  for ($i = 0; $i < count($formInfo); $i++) {
-    $formInfo[$i] = rawurldecode($formInfo[$i]);
-    $formInfo[$i] = str_replace("\\", "\\\\", $data[$i]);
-    $formInfo[$i] = str_replace("\"", "\\\"", $data[$i]);
-  }
-?>
-<script> var formInfo = new Array(
-  <?php
-    for ($i = 0; $i < count($formInfo); $i++) {
-      if ($i > 0) {
-        echo ",\n";
-      }
-      echo "\"";
-      echo $formInfo[$i];
-      echo "\"";
-    }?>);
-</script>
 <html>
     <head>
         <title>Issaquah School District Field/Activity Trip-Parent/Guardian Permission Form</title>
@@ -106,7 +86,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
     <script src="../JS/fill-out-form.js"></script>
     </head>
-    <body onload="setFieldTripInfo(formInfo);">
+    <body onload="setFieldTripInfo();">
 		<div class="container">
         <h1>Issaquah School District</h1>
 		<h1>Field/Activity Trip-Parent/Guardian Permission Form</h1>
