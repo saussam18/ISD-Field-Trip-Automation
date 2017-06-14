@@ -1,25 +1,5 @@
 <!DOCTYPE html>
-<?php
-  $packed = $_POST['formInfo'];
-  $formInfo = split(',', $packed);
 
-  for ($i = 0; $i < count($formInfo); $i++) {
-    $formInfo[$i] = rawurldecode($formInfo[$i]);
-    $formInfo[$i] = str_replace("\\", "\\\\", $data[$i]);
-    $formInfo[$i] = str_replace("\"", "\\\"", $data[$i]);
-  }
-?>
-<script> var formInfo = new Array(
-  <?php
-    for ($i = 0; $i < count($formInfo); $i++) {
-      if ($i > 0) {
-        echo ",\n";
-      }
-      echo "\"";
-      echo $formInfo[$i];
-      echo "\"";
-    }?>);
-</script>
 <html>
     <head>
         <title>Issaquah School District Field/Activity Trip-Parent/Guardian Permission Form</title>
@@ -106,7 +86,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
     <script src="../JS/fill-out-form.js"></script>
     </head>
-    <body onload="setFieldTripInfo(formInfo);">
+    <body onload="setFieldTripInfo();">
 		<div class="container">
         <h1>Issaquah School District</h1>
 		<h1>Field/Activity Trip-Parent/Guardian Permission Form</h1>
@@ -115,23 +95,23 @@
 					<p>As a parent or guardian of a student requesting to voluntarily participate in a field trip, I hereby acknowledge that I have read, understood and agreed to the following:</p>
 						<br>
 							<div class="inner">
-								<p>Field Trip Destination <span id= "destination_blank">____________________________</span>Purpose<span id= "purpose_blank">________________________________</span></p>
-								<p>I hereby give my permission for ______________________________ who attends<span id= "school_blank">__________________</span></p>
-								<p>to participate in a field trip on <span id= "start_date_blank">_________________</span>. Time involved: From<span id= "start_time_blank">________</span>To<span id= "end_time_blank">__________</span></p>
+								<p><strong>Field Trip Destination:</strong> <span id= "destination_blank">____________________________</span> <strong>Purpose:</strong> <span id= "purpose_blank">________________________________</span></p>
+								<p><strong>I hereby give my permission for</strong> ______________________________ <strong>who attends </strong><span id= "school_blank">__________________</span></p>
+								<p><strong>to participate in a field trip on</strong> <span id= "start_date_blank">_________________</span><strong>. Time involved: From </strong><span id= "start_time_blank">________</span> <strong>To</strong> <span id= "end_time_blank">__________</span></p>
 								<p>Type of Transportation:</p>
 								<p><span>______</span> District Vehicle by district staff</p>
 								<p><span>______</span> District is not providing transportation. Parents arrange transportation for their student</p>
 								<p><span>______</span> Private Vehicle by district staff</p>
 								<p><span>______</span> Private Vehicle by Volunteer/Parent (volunteer driver checklist on file)</p>
-								<p><span>______</span> Other (e.g. – walk, metro bus, commercial: Description _________________________________)</p>
+								<p><span>______</span> Other (e.g. – walk, metro bus, commercial: Description: _________________________________)</p>
 								<br>
-								<p>Student’s address <span>__________________________________________________</span> City <span>________________</span></p>
-								<p>Parent’s Phone: Home <span>__________________</span> Cell <span>_________________</span> Student Birthdate <span>_____________</span></p>
-								<p>Family Physician: <span>_______________________________</span> Phone #<span>___________________________</span></p>
+								<p>Student’s address: <span>__________________________________________________</span> City: <span>________________</span></p>
+								<p>Parent’s Phone: Home: <span>__________________</span> Cell: <span>_________________</span> Student Birthdate: <span>_____________</span></p>
+								<p>Family Physician: <span>_______________________________</span> Phone: #<span>___________________________</span></p>
 								<p>Medical conditions, medication information or allergies the district should be made aware of:</p>
 								<p><span>_____________________________________________________________________________________</span></p>
 								<p>In the event of an emergency, I wish the following person to be notified in case I cannot be contacted:</p>
-								<p>Name <span>______________________________________________</span> Phone #<span>___________________________</span></p>
+								<p>Name: <span>______________________________________________</span> Phone: #<span>___________________________</span></p>
 							</div>
 							<br>
 							<div class="inner">
@@ -148,7 +128,7 @@
 						<br>
 							<div class="inner">
 								<p>[To be completed by ISD staff] Required attachments checked below:</p>
-								<p>Extended Trip Itinerary <span>_____</span> Challenge/Ropes Course Release </span>_____</span> Water Activity Release <span>_____</span></p>
+								<p>Extended Trip Itinerary <span>_____</span> Challenge/Ropes Course Release <span>_____</span> Water Activity Release <span>_____</span></p>
 							</div>
 						<br>
 						<p>Being fully informed as to these risks, I hereby consent to my child participating in this Field Trip.</p>

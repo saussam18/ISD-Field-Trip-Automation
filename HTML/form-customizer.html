@@ -91,9 +91,9 @@
         </style>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
+				<script src="../JS/fill-out-form.js"></script>
 	</head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--jquery library-->
-	<script src="../JS/fill-out-form.js"></script>
 	<body>
 		<button class="profile" type="button" name="Profile">Profile</button>
 		<input class="logout" type="submit" value="Logout" />
@@ -134,11 +134,8 @@
 				</div>
                 </div>
                 <br>
-								<form name="formInfo" method="POST" action="create-form.php">
-									<input type="hidden">
-
                 <!--<button class="mid" onClick="window.location='create-form.html'" > Next</button>-->
-								<button id = "work" class="mid" vaule = "work" type = "submit" onclick="google.script.run.next();"> Next</button>
+								<button class="mid" onclick="next();"> Next</button>
                 <br>
             </div>
         </div>
