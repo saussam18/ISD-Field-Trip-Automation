@@ -11,7 +11,7 @@ var challengeCourse;
 var waterActivity;
 
 function next() {
-    //getFieldTripInfo();
+    getFieldTripInfo();
     window.location='create-form.html';
     //alert('button pressed');
 }
