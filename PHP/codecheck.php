@@ -29,8 +29,10 @@ function check(){
       findNull($get, $_POST['code']);
 
     $_SESSION['try'] = "You have Successfully entered the classcode";
+      header("Location: ../HTML/student-page.php");
     } else {
     $_SESSION['try'] = "Classcode does not exist";
+      header("Location: ../HTML/student-page.php");
     }
 }
 function findNull ($get, $code){

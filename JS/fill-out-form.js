@@ -15,6 +15,15 @@ function next() {
     window.location='create-form.html';
     //alert('button pressed');
 }
+/*function jstophp(){
+
+
+  var javavar=document.getElementById("#destination_blank").value;
+
+  document.getElementById("rslt").innerHTML="<?php
+  $phpvar='"+javavar+"';
+  echo $phpvar;?>";
+}*/
 
 function getFieldTripInfo() {
   getDestination();

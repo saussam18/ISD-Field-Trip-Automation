@@ -145,10 +145,14 @@ if($num !=0 ) {
         <div class="container">
             <p>Welcome Student!</p>
             <?php
-              echo "<p>".$_SESSION['delete']."</p>";
+            if (!empty($_SESSION['delete'])){
+              echo "<p><strong>".$_SESSION['delete']."</strong></p>";
               $_SESSION['delete'] = NULL;
-              echo "<p>".$_SESSION['try']."</p>";
+            }
+            if (!empty($_SESSION['try'])){
+              echo "<p><strong>".$_SESSION['try']."</strong></p>";
               $_SESSION['try'] = NULL;
+            }
             ?>
             <div class="login">
                 <div class="name">

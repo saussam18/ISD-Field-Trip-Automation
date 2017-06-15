@@ -127,10 +127,10 @@ if($num !=0 ) {
             <p>Welcome Teacher!</p>
       			<div class=login> <?php
             if (!empty($_SESSION['delete'])){
-              echo "<p>".$_SESSION['delete']."</p>";
+              echo "<p><strong>".$_SESSION['delete']."</strong></p>";
               $_SESSION['delete'] = NULL;
             } if (!empty($_SESSION['create'])){
-              echo "<p>".$_SESSION['create']."</p>";
+              echo "<p><strong>".$_SESSION['create']."</strong></p>";
               $_SESSION['create'] = NULL;
             }
              ?>
@@ -149,7 +149,7 @@ if($num !=0 ) {
                               for ($i = 0; $i < sizeof($courseArr); $i++){
                                $cour = $courseArr[$i]->getName();
                                array_push($cou, $cour);
-                                echo "<option value=".$cour." name=".$i.">".$cour."</option>";
+                                echo "<option value=".$i." name=".$i.">".$cour."</option>";
                               }
                           ?>
           				</select>
@@ -158,10 +158,12 @@ if($num !=0 ) {
                   <button type="sumbit" name = "view" >View Class</button>
                   <?php
                 if (isset($_POST['view'])){
-                for ($j = 0; $j < sizeof($courseArr); $j++){
-                    if ($_POST['combo'] == $cou[$j]){
+                for ($j = 0; $j < sizeof($cou); $j++){
+                    if ($_POST['combo'] == $j){
                         $_SESSION['course'] = $courseArr[$j];
                         header("Location:class-viewer.php");
+                    }else {
+                      echo $_POST['combo'];
                     }
                   }
                 }
