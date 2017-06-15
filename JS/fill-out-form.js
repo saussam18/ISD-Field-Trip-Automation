@@ -6,16 +6,14 @@ var startTime = "";
 var endTime = "";
 var transportation = "";
 var otherTransportation = "";
-var extendedTrip = false;
-var challengeCourse = false;
-var waterActivity = false;
+var extendedTrip;
+var challengeCourse;
+var waterActivity;
 
 function next() {
     //getFieldTripInfo();
-    getTransportation();
     window.location='create-form.html';
     //alert('button pressed');
-
 }
 
 function getFieldTripInfo() {
@@ -25,6 +23,9 @@ function getFieldTripInfo() {
   getStartDate();
   getStartTime();
   getEndTime();
+  getTransportation();
+  getBonusInfo();
+
 }
 
 function getDestination(){
@@ -71,6 +72,15 @@ function getOtherTransportation() {
   otherTransportation = sessionStorage.getItem('other');
 }
 
+function getBonusInfo(){//this funciton may be whack
+    extendedTrip = document.getElementById("extended_trip");
+    ropeCourse = document.getElementById("rope_course");
+    waterActivity = document.getElementById("water_activity");
+    sessionStorage.setItem('extended', extendedTrip.checked);
+    sessionStorage.setItem('rope', ropeCourse.checked);
+    sessionStorage.setItem('water', waterActivity.checked);
+}
+
 function setFieldTripInfo () {
   $('#destination_blank').text(sessionStorage.getItem('des') + "\t");
   $('#purpose_blank').text(sessionStorage.getItem('purpose') + "\t");
@@ -79,6 +89,7 @@ function setFieldTripInfo () {
   $('#start_time_blank').text(sessionStorage.getItem('sTime') + "\t");
   $('#end_time_blank').text(sessionStorage.getItem('eTime') + "\t");
   setTransportation();
+  setBonusInfo();
 }
 
 function setTransportation(){
@@ -99,5 +110,21 @@ function setTransportation(){
   else if (choice == 4){
     $('#other').text("X\t")
     $('#other_blank').text(sessionStorage.getItem('other') + "\t");
+  }
+}
+
+function setBonusInfo(){
+  extendedTrip = sessionStorage.getItem('extended');
+  ropeCourse = sessionStorage.getItem('rope');
+  waterActivity = sessionStorage.getItem('water');
+
+  if (extendedTrip){
+    $('#extendedTrip').text("X\t");
+  }
+  if (ropeCourse){
+    $('#ropeCourse').text("X\t");
+  }
+  if (waterActivity){
+    $('#waterActivity').text("X\t");
   }
 }
