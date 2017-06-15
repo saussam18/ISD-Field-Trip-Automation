@@ -2,7 +2,6 @@ var destination = "";
 var purpose = "";
 var schoolName = "";
 var startDate = "";
-var endDate = "";
 var startTime = "";
 var endTime = "";
 var transportation = "";
@@ -11,20 +10,17 @@ var challengeCourse = false;
 var waterActivity = false;
 
 function next() {
-    //getFieldTripInfo();
-    getDestination();
+    getFieldTripInfo();
     window.location='create-form.html';
 }
 
 function getFieldTripInfo() {
-  purpose = $('#purp').val();
-  schoolName = $('#school').val();
-  startDate = $('#start_date').val();
-  endDate = $('#end_date').val();
-  startTime = $('#start_time').val();
-  endTime = $('#end_time').val();
-  //transportation = do later
-  //add extended trip and below later
+  getDestination();
+  getPurpose();
+  getSchoolName();
+  getStartDate();
+  getStartTime();
+  getEndTime();
 }
 
 function getDestination(){
@@ -32,11 +28,36 @@ function getDestination(){
   destination = sessionStorage.getItem('des');
 }
 
+function getPurpose(){
+  sessionStorage.setItem('purpose', $('#purp').val());
+  purpose = sessionStorage.getItem('purpose ');
+}
+
+function getSchoolName() {
+  sessionStorage.setItem('school', $('#school').val());
+  purpose = sessionStorage.getItem('school');
+}
+
+function getStartDate() {
+  sessionStorage.setItem('sDate', $('#start_date').val());
+  purpose = sessionStorage.getItem('sDate');
+}
+
+function getStartTime() {
+  sessionStorage.setItem('sTime', $('#start_time').val());
+  purpose = sessionStorage.getItem('sTime');
+}
+
+function getEndTime() {
+  sessionStorage.setItem('eTime', $('#end_time').val());
+  purpose = sessionStorage.getItem('eTime');
+}
+
 function setFieldTripInfo () {
   $('#destination_blank').text(sessionStorage.getItem('des') + "\t");
-  /*$('#purpose_blank').val(purpose);
-  $('#school_blank').val(schoolName);
-  $('#start_date_blank').val() = startDate;
-  $('#start_time_blank').val() = startTime;
-  $('#end_time_blank').val() = endTime;*/
+  $('#purpose_blank').text(sessionStorage.getItem('purpose') + "\t");
+  $('#school_blank').text(sessionStorage.getItem('school') + "\t");
+  $('#start_date_blank').text(sessionStorage.getItem('sDate') + "\t");
+  $('#start_time_blank').text(sessionStorage.getItem('sTime') + "\t");
+  $('#end_time_blank').text(sessionStorage.getItem('eTime') + "\t");
 }
